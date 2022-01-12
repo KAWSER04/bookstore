@@ -28,10 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <h1 style="text-align: center;">Insert a Book</h1>
         <center>
             <form action="" method="post">
-                <div>
-                    <label for="">Id</label>
-                    <input type="text" name="id" required>
-                </div>
+                
                 <div>
                     <label for="">Title</label>
                     <input type="text" name="title" required>
