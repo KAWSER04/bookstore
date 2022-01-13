@@ -14,12 +14,15 @@
 		$id = $_POST['id'];
 	}
 
-	if (file_exists('books.json')) {
-       	$booksJson = file_get_contents('books.json');
-				$books = json_decode($booksJson, true);
-  } else {
-      $books = array();
-  }
+require 'db/connect.php';
+require 'db/operation.php';
+
+$pddb = Connect();
+
+Create($pddb);
+
+$books = Data($pddb);
+$books = $books->fetchAll(PDO::FETCH_ASSOC);
 
   $ck = false;
   foreach ($books as $book) {
